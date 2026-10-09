@@ -1,1 +1,1 @@
-{"codeowners": [], "config_flow": true, "dependencies": ["conversation"], "documentation": "https://opencode.ai/docs/zen", "domain": "opencode_zen", "integration_type": "service", "iot_class": "cloud_polling", "name": "OpenCode Zen", "requirements": [], "version": "0.1.0"}
+{"codeowners": [], "config_flow": true, "dependencies": ["conversation"], "documentation": "https://opencode.ai/docs/zen", "domain": "opencode_zen", "integration_type": "service", "iot_class": "cloud_polling", "name": "OpenCode Zen", "requirements": [], "version": "0.3.0"}
