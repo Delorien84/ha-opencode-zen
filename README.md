@@ -1,5 +1,7 @@
 # OpenCode Zen for Home Assistant
 
+[![Release](https://img.shields.io/github/v/release/Delorien84/ha-opencode-zen)](https://github.com/Delorien84/ha-opencode-zen/releases)
+
 Custom integration that exposes [OpenCode Zen / Go](https://opencode.ai/docs/zen)
 models (e.g. `muse-spark-1.3-contributor`) as native Home Assistant
 `conversation` + `ai_task` agents via the OpenAI Responses API.
