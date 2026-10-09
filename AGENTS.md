@@ -25,6 +25,15 @@ Custom Home Assistant integration exposing OpenCode Zen/Go models as native
   `requirements` without discussion.
 - HA floor is 2026.9 (subentries, `ConversationEntity`, `AITaskEntity`).
 
+## Commit format (Conventional Commits — drives releases)
+
+- `feat:` new user-visible feature → minor bump (e.g. `feat: stream responses`)
+- `fix:` bug fix → patch bump (e.g. `fix: require 16+ output tokens`)
+- `docs:`, `chore:`, `refactor:` → no release (unless breaking)
+- Breaking change: `feat!:` / footer `BREAKING-CHANGE:` → major bump
+- Scope is optional: `feat(entity): ...`. Keep subject imperative, ≤72 chars,
+  English. One logical change per commit.
+
 ## Workflow (release-please)
 
 1. Edit here, keep `translations/en.json` + `translations/cs.json` keys in sync.
