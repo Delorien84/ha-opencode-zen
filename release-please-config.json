@@ -1,0 +1,1 @@
+{"$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json", "extra-files": [{"jsonpath": "$.version", "path": "custom_components/opencode_zen/manifest.json", "type": "json"}], "packages": {".": {}}, "release-type": "simple"}

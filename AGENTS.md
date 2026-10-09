@@ -25,12 +25,15 @@ Custom Home Assistant integration exposing OpenCode Zen/Go models as native
   `requirements` without discussion.
 - HA floor is 2026.9 (subentries, `ConversationEntity`, `AITaskEntity`).
 
-## Workflow
+## Workflow (release-please)
 
 1. Edit here, keep `translations/en.json` + `translations/cs.json` keys in sync.
 2. `python3 -m compileall` + `json.tool` check on changed JSON.
-3. Bump `manifest.json` `version`, commit, `git tag vX.Y.Z`, push main + tag.
-4. Publish the GitHub Release from the tag — HACS reads releases, not branches.
-5. Never hand-edit the HACS-managed live copy; update it through HACS.
+3. Commit with **Conventional Commits** (`feat:`, `fix:`, docs/chore otherwise).
+   Never bump `manifest.json` version by hand — release-please owns it.
+4. Push to `main`. The release-please action opens/updates a release PR
+   (CHANGELOG + manifest bump). Merge it to tag + publish the release.
+5. HACS picks up the new release automatically.
+6. Never hand-edit the HACS-managed live copy; update it through HACS.
 
 No secrets in this repo. API keys live only in HA config entries.
