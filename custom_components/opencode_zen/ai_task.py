@@ -54,6 +54,7 @@ class OpencodeZenTaskEntity(ai_task.AITaskEntity, OpencodeZenBaseLLMEntity):
                 translation_placeholders={"message": "empty response"},
             )
         text = last.content or ""
+        LOGGER.debug("AI task raw response: %s", text[:500])
         if not task.structure:
             return ai_task.GenDataTaskResult(
                 conversation_id=chat_log.conversation_id, data=text

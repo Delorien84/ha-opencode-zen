@@ -341,6 +341,14 @@ class OpencodeZenBaseLLMEntity(Entity):
                         "Return only a valid JSON object matching this JSON "
                         f"schema, no other text: {json_dumps(schema)}"
                     )
+                    key_names = ", ".join(
+                        (schema.get("properties") or {}).keys()
+                    )
+                    if key_names:
+                        json_hint += (
+                            " Use EXACTLY these key names, do not translate, "
+                            f"rename or add diacritics: {key_names}."
+                        )
                 except Exception:  # noqa: BLE001
                     LOGGER.warning("Could not convert AI task structure, falling back")
                     json_hint = "Return only valid JSON."
