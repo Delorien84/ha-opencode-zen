@@ -52,7 +52,8 @@
       },
       "initiate_flow": {
         "user": "Add conversation agent"
-      }
+      },
+      "entry_type": "Conversation agent"
     },
     "ai_task_data": {
       "step": {

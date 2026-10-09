@@ -1,1 +1,99 @@
-{"config": {"abort": {"already_configured": "Již nastaveno"}, "error": {"api_error": "Chyba API — podrobnosti v protokolu", "cannot_connect": "Nelze se připojit", "free_tier": "Free modely fungují jen v OpenCode — použij placený/Go model", "invalid_auth": "Neplatný API klíč", "model_not_found": "Model na tomto endpointu není (Zen vs Go URL?)", "quota_exceeded": "Nedostatečný kredit", "timeout": "Vypršel čas", "unknown": "Neznámá chyba"}, "step": {"model": {"data": {"chat_model": "Model"}, "data_description": {"chat_model": "Vyber model."}}, "user": {"data": {"api_key": "API klíč", "base_url": "URL"}, "data_description": {"api_key": "API klíč OpenCode Zen.", "base_url": "Základní URL OpenCode Zen."}}}}, "config_subentries": {"ai_task_data": {"entry_type": "Agent pro AI úlohy", "step": {"init": {"data": {"chat_model": "Model", "llm_hass_api": "Ovládání Home Assistant", "max_tokens": "Max. tokenů", "prompt": "Instrukce", "recommended": "Doporučená nastavení", "require_confirmation": "Potvrzovat citlivé akce", "temperature": "Teplota", "top_p": "Top P"}}}}, "conversation": {"step": {"init": {"data": {"chat_model": "Model", "llm_hass_api": "Ovládání Home Assistant", "max_tokens": "Max. tokenů", "prompt": "Instrukce", "recommended": "Doporučená nastavení", "require_confirmation": "Potvrzovat citlivé akce", "temperature": "Teplota", "top_p": "Top P"}}}}}, "exceptions": {"api_error": {"message": "Chyba API: {message}."}, "cannot_connect": {"message": "Nelze se připojit: {message}."}, "free_tier": {"message": "Free tier blokován: {message}."}, "invalid_auth": {"message": "Neplatné přihlášení: {message}."}, "json_parse_error": {"message": "Špatné argumenty nástroje: {message}."}, "model_not_found": {"message": "Model nenalezen: {message}."}, "quota_exceeded": {"message": "Nedostatečný kredit: {message}."}, "timeout": {"message": "Vypršel čas: {message}."}}}
+{
+  "config": {
+    "abort": {
+      "already_configured": "Již nastaveno"
+    },
+    "error": {
+      "api_error": "Chyba API — podrobnosti v protokolu",
+      "cannot_connect": "Nelze se připojit",
+      "free_tier": "Free modely fungují jen v OpenCode — použij placený/Go model",
+      "invalid_auth": "Neplatný API klíč",
+      "model_not_found": "Model na tomto endpointu není (Zen vs Go URL?)",
+      "quota_exceeded": "Nedostatečný kredit",
+      "timeout": "Vypršel čas",
+      "unknown": "Neznámá chyba"
+    },
+    "step": {
+      "model": {
+        "data": {
+          "chat_model": "Model"
+        },
+        "data_description": {
+          "chat_model": "Vyber model."
+        }
+      },
+      "user": {
+        "data": {
+          "api_key": "API klíč",
+          "base_url": "URL"
+        },
+        "data_description": {
+          "api_key": "API klíč OpenCode Zen.",
+          "base_url": "Základní URL OpenCode Zen."
+        }
+      }
+    }
+  },
+  "config_subentries": {
+    "ai_task_data": {
+      "entry_type": "Agent pro AI úlohy",
+      "step": {
+        "init": {
+          "data": {
+            "chat_model": "Model",
+            "llm_hass_api": "Ovládání Home Assistant",
+            "max_tokens": "Max. tokenů",
+            "prompt": "Instrukce",
+            "recommended": "Doporučená nastavení",
+            "require_confirmation": "Potvrzovat citlivé akce",
+            "temperature": "Teplota",
+            "top_p": "Top P"
+          }
+        }
+      }
+    },
+    "conversation": {
+      "step": {
+        "init": {
+          "data": {
+            "chat_model": "Model",
+            "llm_hass_api": "Ovládání Home Assistant",
+            "max_tokens": "Max. tokenů",
+            "prompt": "Instrukce",
+            "recommended": "Doporučená nastavení",
+            "require_confirmation": "Potvrzovat citlivé akce",
+            "temperature": "Teplota",
+            "top_p": "Top P"
+          }
+        }
+      },
+      "entry_type": "Konverzační agent"
+    }
+  },
+  "exceptions": {
+    "api_error": {
+      "message": "Chyba API: {message}."
+    },
+    "cannot_connect": {
+      "message": "Nelze se připojit: {message}."
+    },
+    "free_tier": {
+      "message": "Free tier blokován: {message}."
+    },
+    "invalid_auth": {
+      "message": "Neplatné přihlášení: {message}."
+    },
+    "json_parse_error": {
+      "message": "Špatné argumenty nástroje: {message}."
+    },
+    "model_not_found": {
+      "message": "Model nenalezen: {message}."
+    },
+    "quota_exceeded": {
+      "message": "Nedostatečný kredit: {message}."
+    },
+    "timeout": {
+      "message": "Vypršel čas: {message}."
+    }
+  }
+}
