@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.3](https://github.com/Delorien84/ha-opencode-zen/compare/v0.4.2...v0.4.3) (2026-10-09)
+
+
+### Bug Fixes
+
+* enforce exact JSON key names for AI tasks ([1550922](https://github.com/Delorien84/ha-opencode-zen/commit/1550922a0837d594d5d7b82761f0883aedb89c35))
+
 ## [0.4.2](https://github.com/Delorien84/ha-opencode-zen/compare/v0.4.1...v0.4.2) (2026-10-09)
 
 
