@@ -325,6 +325,9 @@ class OpencodeZenBaseLLMEntity(Entity):
             if CONF_TOP_P in options:
                 payload["top_p"] = float(options.get(CONF_TOP_P, RECOMMENDED_TOP_P))
             if structure is not None:
+                # Note: strict json_schema output makes reasoning models stall
+                # (no first byte for minutes), so request JSON via instructions
+                # and parse it in ai_task.py instead.
                 try:
                     schema = to_openapi(
                         structure,
@@ -334,28 +337,23 @@ class OpencodeZenBaseLLMEntity(Entity):
                             else None
                         ),
                     )
-                    payload["text"] = {
-                        "format": {
-                            "type": "json_schema",
-                            "name": "ai_task_result",
-                            "schema": schema,
-                            "strict": True,
-                        }
-                    }
+                    json_hint = (
+                        "Return only a valid JSON object matching this JSON "
+                        f"schema, no other text: {json_dumps(schema)}"
+                    )
                 except Exception:  # noqa: BLE001
                     LOGGER.warning("Could not convert AI task structure, falling back")
-                    payload["instructions"] = (
-                        instructions + "\nReturn only valid JSON."
-                        if instructions
-                        else "Return only valid JSON."
-                    )
+                    json_hint = "Return only valid JSON."
+                payload["instructions"] = (
+                    f"{instructions}\n{json_hint}" if instructions else json_hint
+                )
 
             with api_error_handler():
                 async with session.post(
                     url,
                     headers=headers,
                     json=payload,
-                    timeout=aiohttp.ClientTimeout(total=600, sock_read=120),
+                    timeout=aiohttp.ClientTimeout(total=900, sock_read=300),
                 ) as resp:
                     if resp.status in (401, 403):
                         raise HomeAssistantError(
@@ -394,7 +392,7 @@ class OpencodeZenBaseLLMEntity(Entity):
                         )
                         payload["stream"] = False
                         async with session.post(
-                            url, headers=headers, json=payload, timeout=120
+                            url, headers=headers, json=payload, timeout=300
                         ) as retry_resp:
                             if retry_resp.status >= 400:
                                 err_text = (await retry_resp.text())[:1000]
