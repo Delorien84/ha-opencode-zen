@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2](https://github.com/Delorien84/ha-opencode-zen/compare/v0.4.1...v0.4.2) (2026-10-09)
+
+
+### Bug Fixes
+
+* request AI task JSON via instructions, longer timeouts ([893f379](https://github.com/Delorien84/ha-opencode-zen/commit/893f3797a3b1e2bb03e36726b05b2b1964e6cafe))
+
 ## [0.4.1](https://github.com/Delorien84/ha-opencode-zen/compare/v0.4.0...v0.4.1) (2026-10-09)
 
 
