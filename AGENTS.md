@@ -1,0 +1,36 @@
+# AGENTS.md — ha-opencode-zen
+
+Custom Home Assistant integration exposing OpenCode Zen/Go models as native
+`conversation` + `ai_task` agents via the OpenAI Responses API.
+
+## Layout
+
+- `custom_components/opencode_zen/` — the integration
+  (`entity.py` shared Responses loop, `conversation.py`, `ai_task.py`,
+  `api.py` validation client, `config_flow.py`, `const.py`)
+- `brand/icon.png` — required by HACS
+- `hacs.json`, `README.md`, `.github/ISSUE_TEMPLATE/`
+
+## Invariants (do not break)
+
+- Transport is **Responses API with SSE streaming** (`stream: true`) and a
+  **non-streaming fallback** when the stream fails before any data arrives.
+- Every POST needs `Authorization: Bearer` + `x-opencode-session`
+  (per-conversation ID) + own `User-Agent` (Go docs requirement).
+- Paid Go models live on `https://opencode.ai/zen/go/v1`
+  (`muse-spark-1.3-contributor`); Zen pay-as-you-go on `/zen/v1`.
+  Free `*-contributor-free` models fail outside OpenCode (`FreeTierError`).
+- Validation POST must use `max_output_tokens >= 16` (Go rejects less).
+- Runtime deps: only HA-provided `aiohttp` + `probatio`. No new
+  `requirements` without discussion.
+- HA floor is 2026.9 (subentries, `ConversationEntity`, `AITaskEntity`).
+
+## Workflow
+
+1. Edit here, keep `translations/en.json` + `translations/cs.json` keys in sync.
+2. `python3 -m compileall` + `json.tool` check on changed JSON.
+3. Bump `manifest.json` `version`, commit, `git tag vX.Y.Z`, push main + tag.
+4. Publish the GitHub Release from the tag — HACS reads releases, not branches.
+5. Never hand-edit the HACS-managed live copy; update it through HACS.
+
+No secrets in this repo. API keys live only in HA config entries.
