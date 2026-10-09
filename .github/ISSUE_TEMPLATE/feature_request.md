@@ -1,10 +1,10 @@
 ---
 name: Feature request
-about: Návrh na vylepšení
+about: Suggest an improvement
 title: "[FEAT] "
 labels: enhancement
 ---
 
-**Co by to mělo umět?**
+**What should it do?**
 
-**Proč?**
+**Why?**

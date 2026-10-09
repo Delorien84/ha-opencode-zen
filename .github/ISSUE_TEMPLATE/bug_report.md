@@ -1,18 +1,18 @@
 ---
 name: Bug report
-about: Nefunkční chování integrace
+about: Broken integration behavior
 title: "[BUG] "
 labels: bug
 ---
 
-**Popis chyby**
-Co nefunguje?
+**Describe the bug**
+What does not work?
 
-**Verze**
-- Verze integrace (např. 0.3.3):
-- Verze Home Assistant:
+**Versions**
+- Integration version (e.g. 0.3.3):
+- Home Assistant version:
 - Base URL (Zen / Go):
 - Model:
 
 **Log**
-Relevantní část protokolu (`custom_components.opencode_zen`), bez API klíče.
+Relevant log excerpt (`custom_components.opencode_zen`), without the API key.
