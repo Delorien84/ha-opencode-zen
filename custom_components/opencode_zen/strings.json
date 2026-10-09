@@ -1,0 +1,98 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "Already configured"
+    },
+    "error": {
+      "api_error": "API error — see details in the log",
+      "cannot_connect": "Cannot connect",
+      "free_tier": "Free models only work inside OpenCode — use a paid/Go model",
+      "invalid_auth": "Invalid API key",
+      "model_not_found": "Model not found on this endpoint (Zen vs Go URL?)",
+      "quota_exceeded": "Insufficient credits",
+      "timeout": "Timeout",
+      "unknown": "Unknown error"
+    },
+    "step": {
+      "model": {
+        "data": {
+          "chat_model": "Model"
+        },
+        "data_description": {
+          "chat_model": "Select the model to use."
+        }
+      },
+      "user": {
+        "data": {
+          "api_key": "API key",
+          "base_url": "URL"
+        },
+        "data_description": {
+          "api_key": "OpenCode Zen API key.",
+          "base_url": "Base URL of OpenCode Zen."
+        }
+      }
+    }
+  },
+  "config_subentries": {
+    "conversation": {
+      "step": {
+        "init": {
+          "data": {
+            "chat_model": "Model",
+            "llm_hass_api": "Control Home Assistant",
+            "max_tokens": "Max tokens",
+            "prompt": "Instructions",
+            "recommended": "Recommended settings",
+            "temperature": "Temperature",
+            "top_p": "Top P",
+            "require_confirmation": "Confirm sensitive actions"
+          }
+        }
+      }
+    },
+    "ai_task_data": {
+      "step": {
+        "init": {
+          "data": {
+            "chat_model": "Model",
+            "llm_hass_api": "Control Home Assistant",
+            "max_tokens": "Max tokens",
+            "prompt": "Instructions",
+            "recommended": "Recommended settings",
+            "temperature": "Temperature",
+            "top_p": "Top P",
+            "require_confirmation": "Confirm sensitive actions"
+          }
+        }
+      },
+      "entry_type": "AI task agent"
+    }
+  },
+  "exceptions": {
+    "api_error": {
+      "message": "API error: {message}."
+    },
+    "free_tier": {
+      "message": "Free tier blocked: {message}."
+    },
+    "model_not_found": {
+      "message": "Model not found: {message}."
+    },
+    "cannot_connect": {
+      "message": "Cannot connect: {message}."
+    },
+    "invalid_auth": {
+      "message": "Invalid authentication: {message}."
+    },
+    "json_parse_error": {
+      "message": "Bad tool args: {message}."
+    },
+    "quota_exceeded": {
+      "message": "Insufficient credits: {message}."
+    },
+    "timeout": {
+      "message": "Timeout: {message}."
+    }
+  }
+}
