@@ -49,6 +49,9 @@
             "require_confirmation": "Confirm sensitive actions"
           }
         }
+      },
+      "initiate_flow": {
+        "user": "Add conversation agent"
       }
     },
     "ai_task_data": {
@@ -66,7 +69,10 @@
           }
         }
       },
-      "entry_type": "AI task agent"
+      "entry_type": "AI task agent",
+      "initiate_flow": {
+        "user": "Add AI task agent"
+      }
     }
   },
   "exceptions": {
